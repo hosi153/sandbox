@@ -1,4 +1,8 @@
+import Bank from "./components/Bank";
 import Card from "./components/Card";
+import EffectMission from "./components/EffectMission";
+import FocusInput from "./components/FocusInput";
+import { useRef } from "react";
 
 function App() {
   const cards = [
@@ -40,8 +44,36 @@ function App() {
     },
   ];
 
+  const inputRef = useRef(null);
+
+  const handleFocus = () => {
+    inputRef.current.focus(); // DOM 요소에 직접 접근
+  };
+
   return (
     <main className="p-8">
+      <Bank />
+      <br />
+      <br />
+      <br />
+      <br />
+      <EffectMission />
+      <br />
+      <br />
+      <br />
+      <br />
+      <FocusInput />
+
+      <br />
+      <br />
+      <br />
+      <div>입력상자</div>
+      <input ref={inputRef} type="text" placeholder="이름을 입력하세요" />
+      <button onClick={handleFocus}>입력창 포커스</button>
+      <br />
+      <br />
+      <br />
+      <br />
       <h1 className="text-3xl font-bold mb-6">상품 리스트</h1>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {cards.map((card) => (
