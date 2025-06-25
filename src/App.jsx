@@ -9,9 +9,10 @@ import TodoApp from "./components/TodoApp";
  */
 function App() {
   return (
-    <main className="p-4 md:p-8 min-h-screen bg-gray-100">
-      <TodoApp />
-    </main>
+    <div>
+      <h2>30세 미만 유저 목록</h2>
+      <UserList />
+    </div>
   );
 }
 
