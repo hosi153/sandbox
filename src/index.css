@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+/* 추가 커스텀 스타일 */
+@layer components {
+  /* 반응형 컨테이너 스타일 */
+  .todo-container {
+    @apply w-full max-w-md mx-auto md:max-w-2xl;
+  }
+  
+  /* 카드 호버 효과 */
+  .todo-card {
+    @apply transition-all duration-200;
+  }
+  
+  .todo-card:hover {
+    @apply shadow-md;
+  }
+  
+  /* 드래그 앤 드롭 관련 스타일 */
+  [draggable=true] {
+    @apply cursor-grab active:cursor-grabbing;
+  }
+  
+  [draggable=true]:hover::before {
+    content: '↕';
+    @apply absolute left-0 top-1/2 transform -translate-y-1/2 text-gray-400 opacity-50 pl-1;
+  }
+}
